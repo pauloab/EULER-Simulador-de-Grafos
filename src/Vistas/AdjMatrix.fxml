@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="311.0" prefWidth="513.0" styleClass="backgoundPane" stylesheets="@../Recursos/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.ControladorDeMatrizAdj">
+   <top>
+      <FlowPane alignment="CENTER" prefHeight="52.0" prefWidth="513.0" styleClass="secondaryPane" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="243.0" text="Matriz de adyacencia" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="backgoundPane" BorderPane.alignment="CENTER">
+         <content>
+            <Group fx:id="matrizScroll" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

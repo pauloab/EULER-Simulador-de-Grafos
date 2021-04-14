@@ -1,0 +1,64 @@
+/**
+ * EULER 1.3 Simulador de grafos
+ *
+ * @author Paulo Aguilar, Javier Matamoros, Freddy Lamar, Geovany Vega
+ */
+#btMatriz{
+    -fx-background-image: url("MatrixIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 70%;
+    -fx-background-position: center;
+    -fx-background-color: "#413E40";
+    -fx-border-color: "#28333D";
+}
+#btListar{
+    -fx-background-image: url("ListIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 70%;
+    -fx-background-position: center;
+    -fx-background-color: "#413E40";
+    -fx-border-color: "#28333D";
+}
+#btLimpiar{
+    -fx-background-image: url("TrashIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 70%;
+    -fx-background-position: center;
+    -fx-background-color: "#413E40";
+    -fx-border-color: "#28333D";
+}
+#btAyuda{
+        -fx-background-color: "#59575A";
+        -fx-text-fill: whitesmoke;
+}
+
+.backgoundPane{
+    -fx-background-image: url("backEULER.png");
+    -fx-background-size: 60%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: "#59575A";
+}
+.backgoundPane > .viewport  { 
+    -fx-background-image: url("backEULER.png");
+    -fx-background-size: 60%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: "#59575A"; 
+}
+
+.secondaryPane{
+    -fx-background-color: "#565356";
+}
+
+.headerLabel{
+    -fx-font-weight: bold;
+    -fx-font-size:20
+}
+.valueLabel{
+    -fx-font-size: 20 ;
+}
+
+Label{
+    -fx-text-fill: whitesmoke;
+}

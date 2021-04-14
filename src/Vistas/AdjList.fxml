@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" fx:controller="Controlador.ControladorDeListaAdj" prefWidth="738.0" stylesheets="@../Recursos/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+   <center>
+      <ScrollPane pannable="true" prefHeight="347.0" prefWidth="627.0" styleClass="backgoundPane" BorderPane.alignment="CENTER">
+         <content>
+            <Group fx:id="group" styleClass="backgoundPane" />
+         </content></ScrollPane>
+   </center>
+   <top>
+      <FlowPane alignment="CENTER" prefHeight="60.0" prefWidth="738.0" styleClass="secondaryPane" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="nombreCambiar" alignment="CENTER" contentDisplay="CENTER" prefHeight="52.0" prefWidth="394.0" text="Lista de adyacencia" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+   </top>
+</BorderPane>
