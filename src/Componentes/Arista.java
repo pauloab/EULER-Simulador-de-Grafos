@@ -1,6 +1,7 @@
 
 package Componentes;
 
+import javafx.scene.Cursor;
 import javafx.scene.Group;
 
 /**
