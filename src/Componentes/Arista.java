@@ -23,6 +23,7 @@ public class Arista extends Group {
         this.nodoInicio = idNodoInicio;
         this.nodoFinal = idodoFinal;
         this.dirigido = dirigido;
+        this.setCursor(Cursor.HAND);
     }
     
     /**
