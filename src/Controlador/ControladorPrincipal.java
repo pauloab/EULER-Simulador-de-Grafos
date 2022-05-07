@@ -347,6 +347,8 @@ public class ControladorPrincipal implements Initializable {
             } else {
                 showTempMsg("El número de vértices del grafo ha superado el límite de 40");
             }
+        }else {
+            panelPrincipal.setFocusTo(null);
         }
         e.consume();
     }
@@ -483,6 +485,31 @@ public class ControladorPrincipal implements Initializable {
         amplitudID.setText("");
     }
     
+ /**
+     * Realiza la accion de guardado del archivo PNG del grafo
+     */
+    public void exportToPng() {
+
+        //Buscando un directorio
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PNG", "*.png"));
+        fc.setTitle("Exportar Grafo");
+        File file = fc.showSaveDialog(null);
+
+        if (file != null) {
+            panelPrincipal.setFocusTo(null);
+            SnapshotParameters params = new SnapshotParameters();
+            params.setFill(Color.TRANSPARENT);
+            WritableImage image = panelPrincipal.snapshot(params, null);
+
+            try {
+                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+            } catch (IOException e) {
+                // TODO: handle exception here
+            }
+        }
+
+    }
 
    /**
      * Método implmentado debido a la interfaz Initializable.

@@ -39,12 +39,14 @@ public class PanelPrincipal extends Pane {
      * @param nodo Vertice al que se le dará el foco
      */
     public void setFocusTo(Vertice nodo){
-        nodo.setEstaEnfocado(true);
+        if (nodo != null) {
+            nodo.setEstaEnfocado(true);
+        }
         ObservableList children = this.getChildren();
         for (Object nodeX : children) {
-            if (nodeX instanceof Vertice){
+            if (nodeX instanceof Vértice) {
                 if (nodeX != nodo) {
-                    ((Vertice)(nodeX)).setEstaEnfocado(false);
+                    ((Vértice) (nodeX)).setEstaEnfocado(false);
                 }
             }
         }
