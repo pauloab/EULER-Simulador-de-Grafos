@@ -6,7 +6,7 @@ import Componentes.Vertice;
 import Componentes.PanelPrincipal;
 import Controlador.ControladorPrincipal;
 import Modelo.Coordenada;
-♠import Modelo.ArchivoGraph;
+import Modelo.ArchivoGraph;
 import java.io.IOException;
 
 import grafos.GrafoMA;
