@@ -620,4 +620,9 @@ public class ControladorPrincipal implements Initializable {
 
         this.grafo = new GrafoMA(40, dirigido);
     }
+
+    public PanelPrincipal getPanelPrincipal(){
+        return panelPrincipal;
+    }
+
 }

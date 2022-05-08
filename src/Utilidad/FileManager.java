@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package utils;
+package Utilidad;
 
 import Componentes.AristaDirigida;
 import Componentes.AristaNoDirigida;
-import Componentes.Nodo;
+import Componentes.Vertice;
 import Componentes.PanelPrincipal;
 import Controlador.ControladorPrincipal;
 import Modelo.Coordenada;
-import Modelo.Grafo;
+import grafos.Grafo;
 import Modelo.ArchivoGraph;
 import java.io.IOException;
 import javafx.collections.ObservableList;
@@ -22,12 +17,12 @@ public class FileManager {
         Escritura<ArchivoGraph> escritura = new Escritura(ruta);
         ArchivoGraph file = new ArchivoGraph(ruta, grafo);
         Node obj;
-        Nodo node;
+        Vertice node;
         ObservableList<Node> nodes = panel.getChildren();
         for (int i = 0; i <nodes.size() ; i++) {
             obj = nodes.get(i);
-            if (obj instanceof Nodo) {
-                node = (Nodo)(obj);
+            if (obj instanceof Vertice) {
+                node = (Vertice)(obj);
                 file.estabelcerCoordenadas(node.getNodoId(), node.getLayoutX() , node.getLayoutY());
             }
         }
@@ -51,7 +46,7 @@ public class FileManager {
         
         for (int i = 0; i < grafo.obtenerNumVertices(); i++) {
             coordenada = archivo.obtenerCoordenada(i);
-            Nodo nodo = new Nodo(coordenada.getX(), coordenada.getY(), "" + i);
+            Vertice nodo = new Vertice(coordenada.getX(), coordenada.getY(), "" + i);
             nodo.setNodoId(i);
             
             //Añade event listeners
