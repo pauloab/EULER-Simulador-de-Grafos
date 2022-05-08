@@ -15,6 +15,16 @@ El presente proyecto, comenzó como un peroyeto de asignatura de Estructuras de 
 
 ## Capturas de pantalla
 
+![SC 1](https://github.com/pauloab/EULER/blob/main/screenshots/1.png?raw=true)
+
+![SC 2](https://github.com/pauloab/EULER/blob/main/screenshots/2.png?raw=true)
+
+![SC 3](https://github.com/pauloab/EULER/blob/main/screenshots/3.png?raw=true)
+
+![SC 4](https://github.com/pauloab/EULER/blob/main/screenshots/4.png?raw=true)
+
+![SC 5](https://github.com/pauloab/EULER/blob/main/screenshots/5.png?raw=true)
+
 ## Uso
 
 ### Soy un usuario, me gustan los dispositivos plug-and-play
@@ -31,15 +41,6 @@ Mi querido desarrollador, tu lo tienes más complicado
 4. Si deseas editar los FXML sin saber FXML puedes utilizar [Scene Builder](https://gluonhq.com/products/scene-builder/)
 5. Una vez clonado el repositorio y abierto en el IDE, ve a ``` File > project structure > modules > EULER > Dependencies``` y agrega la la carpeta ```lib``` de el JavaFX SDK
 6. Seleccionar el Lenguage Level 8 y el JDK 1.8 en ```File > Project structure > Project```
-7. Luego ve a la pestaña ```Run > Edit Configuration``` y selecciona ```Modify Options > Add VM Options```
-8. En este paso, es importante reemplazar los parametros correctamente:
-  ```
-    --module-path "<Carpeta lib del JavaFX SDK>;<Carpeta donde se generan los .class del proyecto>" --add-modules javafx.controls,javafx.fxml
-  ```
-  por ejemplo
-  ```
-    --module-path "D:\javafx-sdk-18.0.1\lib;E:\Proyectos\EULER\out\production\EULER" --add-modules javafx.controls,javafx.fxml
-  ```
 7. Ejecuta y disfruta. 
 
 ## Datos técnicos
