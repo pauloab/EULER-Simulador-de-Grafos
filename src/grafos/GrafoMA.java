@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class GrafoMA implements Grafo {
+public class GrafoMA implements Grafo, Serializable {
 	private String nombre;
 	int maxNodos;             // Tamaño máximo de la tabla.
 	int numVertices;          // Número de vértices.

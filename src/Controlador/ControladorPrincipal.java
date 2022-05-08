@@ -6,6 +6,7 @@ import Componentes.Arista;
 import Componentes.Vertice;
 import Componentes.AristaNoDirigida;
 import Componentes.ToggleSwitch;
+import Utilidad.FileManager;
 import grafos.GrafoMA;
 import Utilidad.Recorridos;
 import java.awt.Desktop;
@@ -64,9 +65,6 @@ public class ControladorPrincipal implements Initializable {
     Problemas conocidos
     -Paneo de la superficie
      */
-
-    @FXML
-    private Button btAyuda;
 
     @FXML
     private Pane panelModoDiseño;
@@ -519,6 +517,42 @@ public class ControladorPrincipal implements Initializable {
 
     }
 
+    public void guardarGrafo(){
+        //Buscando un directorio
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivo de Grafo Euler", "*.egraph"));
+        fc.setTitle("Guardar Grafo");
+        File file = fc.showSaveDialog(null);
+
+        if (file != null) {
+            try {
+                FileManager.guardarArchivoDeGrafo(panelPrincipal, grafo, file.getAbsolutePath());
+            } catch (IOException e) {
+                showTempMsg("Error al guardar el grafo.");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void abrirGrafo(){
+        //Buscando un directorio
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivo de Grafo Euler", "*.egraph"));
+        fc.setTitle("Abrir Grafo");
+        File file = fc.showOpenDialog(null);
+
+        if (file != null) {
+            try {
+                this.grafo = FileManager.cargarArchivoGrafo(file.getAbsolutePath(), this);
+            } catch (IOException e) {
+                showTempMsg("Error al abrir el grafo.");
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                showTempMsg("Archivo de grafo corrupto.");
+            }
+        }
+    }
+
    /**
      * Método implmentado debido a la interfaz Initializable.
      * Para mayor informacion remitase la documentación de JavFX.
@@ -562,7 +596,6 @@ public class ControladorPrincipal implements Initializable {
         this.panelPrincipal = new PanelPrincipal();
         this.panelBorde.setCenter(panelPrincipal);
         this.menuContextual = new ContextMenu();
-        this.btAyuda.setOnMouseClicked(this::btAyudaClick);
         // Añade eventHandlers
         panelPrincipal.setOnMouseReleased(this::panelPrincipalClickLevantado);
 
@@ -621,6 +654,10 @@ public class ControladorPrincipal implements Initializable {
         this.grafo = new GrafoMA(40, dirigido);
     }
 
+    /**
+     * Getter del objeto de panel principal
+     * @return retorna un objeto de tipo PanelPrincipal
+     */
     public PanelPrincipal getPanelPrincipal(){
         return panelPrincipal;
     }

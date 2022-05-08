@@ -6,14 +6,15 @@ import Componentes.Vertice;
 import Componentes.PanelPrincipal;
 import Controlador.ControladorPrincipal;
 import Modelo.Coordenada;
-import grafos.Grafo;
-import Modelo.ArchivoGraph;
+♠import Modelo.ArchivoGraph;
 import java.io.IOException;
+
+import grafos.GrafoMA;
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
 
 public class FileManager {
-    public static void guardarArchivoDeGrafo(PanelPrincipal panel, Grafo grafo , String ruta) throws IOException{
+    public static void guardarArchivoDeGrafo(PanelPrincipal panel, GrafoMA grafo , String ruta) throws IOException{
         Escritura<ArchivoGraph> escritura = new Escritura(ruta);
         ArchivoGraph file = new ArchivoGraph(ruta, grafo);
         Node obj;
@@ -32,13 +33,14 @@ public class FileManager {
         
     }
     
-    public static Grafo cargarArchivoGrafo(String ruta, ControladorPrincipal controlador) throws IOException, ClassNotFoundException{
+    public static GrafoMA cargarArchivoGrafo(String ruta, ControladorPrincipal controlador) throws IOException, ClassNotFoundException{
         ArchivoGraph archivo;
         PanelPrincipal panel = controlador.getPanelPrincipal();
         Coordenada coordenada;
-        Grafo grafo;
+        GrafoMA grafo;
         Lectura<ArchivoGraph> lectura = new Lectura<>(ruta);
-        
+
+        controlador.limpiarGrafo();
         lectura.abrir();
         archivo = lectura.leer();
         lectura.cerrar();
@@ -46,7 +48,7 @@ public class FileManager {
         
         for (int i = 0; i < grafo.obtenerNumVertices(); i++) {
             coordenada = archivo.obtenerCoordenada(i);
-            Vertice nodo = new Vertice(coordenada.getX(), coordenada.getY(), "" + i);
+            Vertice nodo = new Vertice(coordenada.getX()+15, coordenada.getY()+15, "" + i);
             nodo.setNodoId(i);
             
             //Añade event listeners

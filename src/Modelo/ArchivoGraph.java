@@ -5,18 +5,18 @@
  */
 package Modelo;
 
-import grafos.Grafo;
+import grafos.GrafoMA;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ArchivoGraph implements Serializable{
-    
+    private static final long serialVersionUID = 6529685098267757690L;
     private ArrayList<Coordenada> cordenadas;
-    private Grafo grafo;
+    private GrafoMA grafo;
     private String fileName;
     
-    public ArchivoGraph(String fileName, Grafo grafo){
+    public ArchivoGraph(String fileName, GrafoMA grafo){
         this.fileName = fileName;
         this.grafo = grafo;
         this.cordenadas = new ArrayList<>();
@@ -30,7 +30,7 @@ public class ArchivoGraph implements Serializable{
         cordenadas.add(index, new Coordenada(x, y));
     }
     
-    public Grafo obtenerGrafo(){
+    public GrafoMA obtenerGrafo(){
         return grafo;
     }
     
