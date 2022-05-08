@@ -1,0 +1,32 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="EULER">
+    <output-path>$PROJECT_DIR$/production</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Inicio.ClaseInicio" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="Proyecto de aula de Estructuras de datos, simulador de Grafos" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/Recursos/logoEuler.png" />
+            <option name="macIcon" value="$PROJECT_DIR$/src/Recursos/MAC_icon.icns" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/Recursos/logoEuler.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="EULER - Simulador de Grafos" />
+        <option name="vendor" value="EULER Project" />
+        <option name="version" value="2.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="EULER.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/manifest.mf" output-file-name="MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="EULER" />
+      </element>
+    </root>
+  </artifact>
+</component>
