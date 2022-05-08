@@ -29,7 +29,6 @@ public class PanelPrincipal extends Pane {
         
         getChildren().add(lineaTemporal);
         
-        this.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
     }
     
     /**
@@ -44,9 +43,9 @@ public class PanelPrincipal extends Pane {
         }
         ObservableList children = this.getChildren();
         for (Object nodeX : children) {
-            if (nodeX instanceof Vértice) {
+            if (nodeX instanceof Vertice) {
                 if (nodeX != nodo) {
-                    ((Vértice) (nodeX)).setEstaEnfocado(false);
+                    ((Vertice) (nodeX)).setEstaEnfocado(false);
                 }
             }
         }
