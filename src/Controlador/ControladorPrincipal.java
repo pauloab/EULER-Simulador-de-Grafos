@@ -104,6 +104,8 @@ public class ControladorPrincipal implements Initializable {
     private Stage matrizAdjStage;
     private ControladorDeListaAdj listaAdjControlador;
     private Stage listaAdjStage;
+
+    private Stage aboutStage;
     private boolean clickBloqueado;
 
     
@@ -393,6 +395,8 @@ public class ControladorPrincipal implements Initializable {
         matrizAdjStage.show();
     }
 
+    public void mostrarAbout() { aboutStage.show(); }
+
     /**
      * Evento que se lanza cuando se da click en el botón lista de adyacencia (se establece en el FXML).
      */
@@ -591,6 +595,19 @@ public class ControladorPrincipal implements Initializable {
             e.printStackTrace();
         }
         this.clickBloqueado = false;
+
+        //Precarga la ventana de About
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Vistas/About.fxml"));
+            aboutStage = new Stage();
+            aboutStage.setWidth(490);
+            aboutStage.setHeight(340);
+            aboutStage.setScene(new Scene(root));
+            aboutStage.getIcons().add(image);
+            aboutStage.setTitle("EULER - Simulador de Grafos");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // Instancia y agrega al componente padre o "Pane"
         this.panelPrincipal = new PanelPrincipal();

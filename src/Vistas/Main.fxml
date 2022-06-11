@@ -63,6 +63,7 @@
           <Menu mnemonicParsing="false" text="Ayuda">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#btAyudaClick" text="Manual de Usuario" />
+                  <MenuItem mnemonicParsing="false" onAction="#mostrarAbout" text="Sobre Euler" />
             </items>
           </Menu>
         </menus>
